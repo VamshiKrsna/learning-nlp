@@ -29,3 +29,9 @@ corpus = [
 ng = NGrams(n=2) # Bigrams
 ng.fit(corpus)
 print("Bi-Grams for given corpus : \n", ng.get_ngrams())
+
+"""
+Output :
+Bi-Grams for given corpus : 
+ {('He', 'is'): 1, ('is', 'a'): 2, ('a', 'good'): 2, ('good', 'boy'): 1, ('She', 'is'): 1, ('good', 'girl'): 1, ('Boy', 'and'): 1, ('and', 'girl'): 1, ('girl', 'are'): 1, ('are', 'good'): 1}
+"""

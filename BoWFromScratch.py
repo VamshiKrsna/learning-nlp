@@ -42,3 +42,13 @@ bow_matrix = bow.fit_transform(corpus)
 
 print("Vocabulary : ", bow.vocab)
 print("Bag Of Words Matrix : \n", bow_matrix)
+
+"""
+Output : 
+Vocabulary :  {'he': 0, 'is': 1, 'a': 2, 'good': 3, 
+'boy': 4, 'she': 5, 'girl': 6, 'and': 7, 'are': 8}  
+Bag Of Words Matrix :
+ [[1 1 1 1 1 0 0 0 0]
+ [0 1 1 1 0 1 1 0 0]
+ [0 0 0 1 1 0 1 1 1]]
+"""
