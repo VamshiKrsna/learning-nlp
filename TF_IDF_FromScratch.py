@@ -15,7 +15,7 @@ def compute_idf(corpus):
     idf = {}
     for word in vocab:
         doc_count = sum(1 for sentence in corpus if word in sentence.split())
-        idf[word] = math.log(total_docs / (1 + doc_count))  # Adding 1 to avoid division by zero
+        idf[word] = math.log(total_docs / (1 + doc_count))  # adding 1 to avoid division by zero
     return idf
 
 def compute_tfidf(corpus):
