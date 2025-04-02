@@ -68,3 +68,24 @@ pred_text = input_text + predicted_token
 
 print(f"Predicted next token : {predicted_token}")
 print(f"Complete prediction : {pred_text}")
+
+# Generating next n no. of tokens (to form a sentence)
+
+num_toks_to_gen = 10
+gen_text = input_text 
+
+for i in range(num_toks_to_gen):
+    input_ids = tokenizer.encode(gen_text)
+    tokens_tensor = torch.tensor([input_ids]).to('cpu')
+
+    with torch.no_grad():
+        ops = model(tokens_tensor)
+        preds = ops[0]
+    
+    predicted_idx = torch.argmax(preds[0,-1,:]).item()
+    predicted_token = tokenizer.decode(predicted_idx)
+    
+    # Generated text 
+    gen_text += predicted_token
+
+print(f"Generated Text with {num_toks_to_gen} new tokens : {gen_text}")
